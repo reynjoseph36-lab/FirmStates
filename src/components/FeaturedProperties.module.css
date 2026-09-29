@@ -1,0 +1,323 @@
+.section {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.titleArea {
+  max-width: 600px;
+}
+
+.sectionTag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.filterTabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.tabBtn:hover {
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+.tabBtnActive {
+  background: rgba(197, 160, 89, 0.18);
+  border-color: var(--border-gold);
+  color: var(--gold-light);
+}
+
+/* Property Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-elevated), 0 0 25px rgba(197, 160, 89, 0.15);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background: #090e1a;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(7, 10, 18, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+}
+
+.favBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(7, 10, 18, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.favBtn:hover {
+  background: var(--gold-primary);
+  color: var(--text-inverse);
+  border-color: var(--gold-primary);
+}
+
+.favBtnActive {
+  background: #ef4444;
+  color: #fff;
+  border-color: #ef4444;
+}
+
+.content {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.specs {
+  display: flex;
+  gap: 1.2rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 1.25rem;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.specVal {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.specLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.pricingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-bottom: 1.25rem;
+}
+
+.priceCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.priceAmount {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.yieldBadge {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cardActions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+}
+
+.inquireBtn {
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.inquireBtn:hover {
+  background: var(--gold-gradient);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 15px var(--gold-glow);
+}
+
+.dossierBtn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.dossierBtn:hover {
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-subtle);
+}
+
+.emptyTitle {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.emptyText {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.resetBtn {
+  background: var(--gold-gradient);
+  color: var(--text-inverse);
+  font-weight: 700;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

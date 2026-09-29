@@ -1,0 +1,205 @@
+.section {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(22, 32, 58, 0.8) 0%, rgba(13, 19, 34, 0.95) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-elevated);
+  position: relative;
+  overflow: hidden;
+}
+
+.cardGlow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem;
+}
+
+.tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.calculatorGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sliderGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sliderLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sliderValue {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.rangeInput {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #1e2a44;
+  border-radius: var(--radius-full);
+  outline: none;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.6);
+  transition: transform var(--transition-fast);
+}
+
+.rangeInput::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Results Display */
+.resultsBox {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.metricPrimary {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.25rem;
+}
+
+.metricPrimaryLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.metricPrimaryValue {
+  font-size: 2.6rem;
+  font-weight: 800;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.resultsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.resultItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.resultLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resultValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ctaButton {
+  margin-top: 0.5rem;
+  background: var(--gold-gradient);
+  color: var(--text-inverse);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-gold);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.45);
+}
+
+@media (max-width: 900px) {
+  .calculatorGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .card {
+    padding: 2.5rem 1.5rem;
+  }
+}

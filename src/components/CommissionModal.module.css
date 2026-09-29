@@ -1,0 +1,179 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(10, 12, 14, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal {
+  background: var(--color-surface);
+  border: 1px solid var(--border-copper);
+  border-radius: var(--radius-panel);
+  max-width: 580px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-subtle);
+  background: var(--color-ground);
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.closeBtn:hover {
+  color: var(--color-bone);
+}
+
+.titleArea {
+  margin-bottom: 1.75rem;
+}
+
+.modalTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-bone);
+  margin-bottom: 0.35rem;
+}
+
+.modalSub {
+  color: var(--color-nickel);
+  font-size: 0.9rem;
+}
+
+.docketSummaryBox {
+  background: var(--color-ground);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-subtle);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.docketSummaryLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.docketKey {
+  color: var(--color-muted);
+}
+
+.docketVal {
+  color: var(--color-bone);
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.input,
+.textarea {
+  background: var(--color-ground);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-subtle);
+  padding: 0.75rem 1rem;
+  color: var(--color-bone);
+  font-size: 0.9rem;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--color-amber);
+  outline: none;
+}
+
+.submitBtn {
+  background: var(--color-amber);
+  color: #0d0f11;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-subtle);
+  margin-top: 0.5rem;
+  transition: background var(--transition-fast);
+}
+
+.submitBtn:hover {
+  background: #d48744;
+}
+
+/* Success Confirmation */
+.successBox {
+  padding: 2rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.successIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-amber-soft);
+  color: var(--color-amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.successHeading {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--color-bone);
+}
+
+.successText {
+  color: var(--color-nickel);
+  font-size: 0.95rem;
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+.doneBtn {
+  background: var(--color-bone);
+  color: var(--color-ground);
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-subtle);
+  font-weight: 500;
+  font-size: 0.9rem;
+}

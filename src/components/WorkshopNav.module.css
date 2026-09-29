@@ -1,0 +1,94 @@
+.navHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: rgba(19, 22, 25, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.15rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brandGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.brandTitle {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-bone);
+}
+
+.brandLocation {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link {
+  font-size: 0.88rem;
+  color: var(--color-nickel);
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-bone);
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.slotBadge {
+  font-size: 0.8rem;
+  color: var(--color-amber);
+  background: var(--color-amber-soft);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-subtle);
+  border: 1px solid var(--border-copper);
+}
+
+.commissionBtn {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-ground);
+  background: var(--color-bone);
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-subtle);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.commissionBtn:hover {
+  background: #f4f0e6;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+  .brandLocation {
+    display: none;
+  }
+}

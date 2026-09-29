@@ -1,25 +1,33 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Fraunces, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Firmstate | Prime Real Estate & Precision Asset Management",
+  title: "Arbor Guitars | Handcrafted Electric & Semi-Hollow Instruments",
   description:
-    "Firmstate is an elite real estate acquisition and institutional property management platform, stewarding prime residential and commercial assets globally.",
+    "Boutique electric, semi-hollow, and baritone guitars hand-carved in small batches from seasoned tone woods with scatter-wound pickups and thin-skin nitrocellulose finishes.",
   keywords: [
-    "Firmstate",
-    "Luxury Real Estate",
-    "Property Management",
-    "Asset Management",
-    "Real Estate Investment",
-    "Penthouses",
-    "Prime Estates",
+    "Arbor Guitars",
+    "Handcrafted Guitars",
+    "Boutique Electric Guitar",
+    "Luthier",
+    "Roasted Swamp Ash",
+    "Gold Foil Pickups",
+    "Custom Guitar Build",
   ],
 };
 
@@ -29,9 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={plusJakartaSans.variable}>
+    <html lang="en" className={`${fraunces.variable} ${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   );
 }
-

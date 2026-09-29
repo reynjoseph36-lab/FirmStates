@@ -1,144 +1,94 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import FeaturedProperties from "@/components/FeaturedProperties";
-import ValuationCalculator from "@/components/ValuationCalculator";
-import AssetManagement from "@/components/AssetManagement";
-import GlobalMarkets from "@/components/GlobalMarkets";
-import ConsultationModal from "@/components/ConsultationModal";
-import Footer from "@/components/Footer";
-import { PROPERTIES, Property } from "@/data/properties";
+import React, { useState } from "react";
+import WorkshopNav from "@/components/WorkshopNav";
+import HeroWorkbench from "@/components/HeroWorkbench";
+import ToneBench from "@/components/ToneBench";
+import InstrumentShowcase from "@/components/InstrumentShowcase";
+import Craftsmanship from "@/components/Craftsmanship";
+import BuildDocket from "@/components/BuildDocket";
+import CommissionModal from "@/components/CommissionModal";
+import WorkshopFooter from "@/components/WorkshopFooter";
+
+interface BuildDetails {
+  model: string;
+  timber: string;
+  fretboard: string;
+  pickups: string;
+  finish: string;
+  totalPrice: number;
+  estimatedWeight: string;
+}
 
 export default function Home() {
-  const [currency, setCurrency] = useState("USD");
-  const [filters, setFilters] = useState({
-    city: "all",
-    category: "all",
-    price: "all",
-  });
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
+  const [selectedModelForDocket, setSelectedModelForDocket] = useState<string>("model-one");
+  const [isCommissionModalOpen, setIsCommissionModalOpen] = useState(false);
+  const [activeBuildDetails, setActiveBuildDetails] = useState<BuildDetails | null>(null);
 
-  // Filter properties logic
-  const filteredProperties = useMemo(() => {
-    return PROPERTIES.filter((prop) => {
-      // City check
-      if (filters.city !== "all" && prop.city !== filters.city) {
-        return false;
-      }
-      // Category check
-      if (filters.category !== "all" && prop.category !== filters.category) {
-        return false;
-      }
-      // Price bracket check
-      if (filters.price === "under20" && prop.priceUSD >= 20000000) {
-        return false;
-      }
-      if (
-        filters.price === "20to25" &&
-        (prop.priceUSD < 20000000 || prop.priceUSD > 25000000)
-      ) {
-        return false;
-      }
-      if (filters.price === "over25" && prop.priceUSD <= 25000000) {
-        return false;
-      }
-      return true;
+  const scrollToModels = () => {
+    const el = document.getElementById("models");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToToneBench = () => {
+    const el = document.getElementById("tone-bench");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSelectModelForDocket = (modelId: string) => {
+    setSelectedModelForDocket(modelId);
+    const el = document.getElementById("docket");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleOpenCommissionModal = (details: BuildDetails) => {
+    setActiveBuildDetails(details);
+    setIsCommissionModalOpen(true);
+  };
+
+  const handleOpenGeneralCommission = () => {
+    setActiveBuildDetails({
+      model: "Arbor Model One",
+      timber: "Torrefied Swamp Ash",
+      fretboard: "Old-Growth Indian Rosewood",
+      pickups: "Arbor Hand-Wound Gold Foils",
+      finish: "Dune Wax (Open-Pore Satin)",
+      totalPrice: 2850,
+      estimatedWeight: "6.9 lbs",
     });
-  }, [filters]);
-
-  const handleFilterChange = (newFilters: {
-    city: string;
-    category: string;
-    price: string;
-  }) => {
-    setFilters(newFilters);
-  };
-
-  const handleCategorySelect = (category: string) => {
-    setFilters((prev) => ({
-      ...prev,
-      category,
-    }));
-  };
-
-  const handleCitySelect = (city: string) => {
-    setFilters((prev) => ({
-      ...prev,
-      city,
-    }));
-    scrollToProperties();
-  };
-
-  const handleResetFilters = () => {
-    setFilters({
-      city: "all",
-      category: "all",
-      price: "all",
-    });
-  };
-
-  const handleInquireProperty = (prop: Property) => {
-    setSelectedProperty(prop);
-    setIsConsultationOpen(true);
-  };
-
-  const handleOpenGeneralConsultation = () => {
-    setSelectedProperty(null);
-    setIsConsultationOpen(true);
-  };
-
-  const scrollToProperties = () => {
-    const el = document.getElementById("properties");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    setIsCommissionModalOpen(true);
   };
 
   return (
     <>
-      <Navbar
-        currentCurrency={currency}
-        onCurrencyChange={setCurrency}
-        onOpenConsultation={handleOpenGeneralConsultation}
-      />
+      <WorkshopNav onOpenCommission={handleOpenGeneralCommission} />
 
       <main>
-        <Hero
-          selectedCity={filters.city}
-          selectedCategory={filters.category}
-          selectedPrice={filters.price}
-          onFilterChange={handleFilterChange}
-          onScrollToProperties={scrollToProperties}
+        <HeroWorkbench
+          onScrollToModels={scrollToModels}
+          onScrollToToneBench={scrollToToneBench}
         />
 
-        <FeaturedProperties
-          properties={filteredProperties}
-          currentCurrency={currency}
-          activeCategory={filters.category}
-          onCategorySelect={handleCategorySelect}
-          onInquire={handleInquireProperty}
-          onResetFilters={handleResetFilters}
+        <ToneBench />
+
+        <InstrumentShowcase
+          onSelectForDocket={handleSelectModelForDocket}
         />
 
-        <ValuationCalculator
-          currentCurrency={currency}
-          onOpenConsultation={handleOpenGeneralConsultation}
+        <Craftsmanship />
+
+        <BuildDocket
+          initialModelId={selectedModelForDocket}
+          onOpenCommissionModal={handleOpenCommissionModal}
         />
-
-        <AssetManagement />
-
-        <GlobalMarkets onSelectCity={handleCitySelect} />
       </main>
 
-      <Footer />
+      <WorkshopFooter />
 
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-        selectedProperty={selectedProperty}
+      <CommissionModal
+        isOpen={isCommissionModalOpen}
+        onClose={() => setIsCommissionModalOpen(false)}
+        buildDetails={activeBuildDetails}
       />
     </>
   );

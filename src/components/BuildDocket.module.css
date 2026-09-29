@@ -1,0 +1,210 @@
+.docketSection {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 1.75rem;
+}
+
+.docketCard {
+  background: var(--color-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-panel);
+  padding: 3.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  max-width: 620px;
+  margin-bottom: 3rem;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--color-bone);
+  margin-bottom: 0.65rem;
+}
+
+.subheading {
+  color: var(--color-nickel);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.docketGrid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.95fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+/* Form Controls */
+.formCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.optionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.optionTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+}
+
+.choiceBtn {
+  background: var(--color-ground);
+  border: 1px solid var(--border-hairline);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-subtle);
+  text-align: left;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.choiceBtn:hover {
+  border-color: var(--border-defined);
+}
+
+.choiceBtnActive {
+  background: var(--color-bench);
+  border-color: var(--border-copper);
+}
+
+.choiceLabel {
+  font-size: 0.88rem;
+  color: var(--color-bone);
+  font-weight: 500;
+}
+
+.choiceCost {
+  font-size: 0.75rem;
+  color: var(--color-amber);
+}
+
+/* Docket Summary Panel */
+.summaryPanel {
+  background: var(--color-ground);
+  border: 1px solid var(--border-copper);
+  border-radius: var(--radius-subtle);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.docketHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 1rem;
+}
+
+.docketTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-bone);
+}
+
+.docketNumber {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 1.5rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  gap: 1rem;
+}
+
+.summaryKey {
+  color: var(--color-muted);
+}
+
+.summaryVal {
+  color: var(--color-bone);
+  text-align: right;
+  font-weight: 500;
+}
+
+.totalBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.totalLabel {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.totalAmount {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-bone);
+}
+
+.timelineNote {
+  font-size: 0.82rem;
+  color: var(--color-nickel);
+  background: rgba(194, 120, 56, 0.08);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-subtle);
+  border-left: 2px solid var(--color-amber);
+}
+
+.submitBtn {
+  background: var(--color-amber);
+  color: #0d0f11;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-subtle);
+  width: 100%;
+  text-align: center;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.submitBtn:hover {
+  background: #d48744;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .docketGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .docketCard {
+    padding: 2rem 1.5rem;
+  }
+  .summaryPanel {
+    position: static;
+  }
+}

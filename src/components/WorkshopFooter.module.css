@@ -1,0 +1,87 @@
+.footer {
+  border-top: 1px solid var(--border-hairline);
+  background: var(--color-surface);
+  padding: 4.5rem 1.75rem 3rem;
+  margin-top: 4rem;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brandTitle {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-bone);
+}
+
+.tagline {
+  color: var(--color-nickel);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+.guaranteeNote {
+  font-size: 0.8rem;
+  color: var(--color-amber);
+  background: var(--color-ground);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-subtle);
+  border: 1px solid var(--border-hairline);
+  width: fit-content;
+}
+
+.colTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-bone);
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--color-nickel);
+}
+
+.list a:hover {
+  color: var(--color-bone);
+}
+
+.bottomBar {
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
